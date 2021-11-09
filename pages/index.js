@@ -4,8 +4,11 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Copyright from '../src/Copyright';
 import Button from '@mui/material/Button';
+import { useRouter } from 'next/router'
 
 export default function Index() {
+  const router = useRouter()
+
   return (
     <Container maxWidth="sm">
       <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
