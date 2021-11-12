@@ -28,7 +28,12 @@ export default function QuizComponent() {
     };
 
     return (
-        <Container maxWidth="sm">
+        <Container maxWidth="sm" sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)'
+        }}>
             <Box sx={{ my: 4 }}>
                 {showScore ? (
                     <>

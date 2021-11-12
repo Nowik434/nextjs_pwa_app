@@ -1,37 +1,55 @@
 import React, { useState } from 'react';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Copyright from '../../src/Copyright';
-
+import Loading from '../../components/loading/loading';
 import QuizComponent from '../../components/quizComponent/quizComponent';
 
 
-export default function Quiz() {
+function Quiz() {
     const router = useRouter()
     const [isRunning, setIsRunning] = useState(false)
+    const { user, error, isLoading } = useUser();
 
-    return (
-        (isRunning ? (
-            <QuizComponent />
-        ) : (
-                <Container maxWidth="sm">
-                    <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
-                        <Typography variant="h4" component="h1" gutterBottom align="center">
-                            Rozwiąż Quiz aby uzyskać nagrodę
-        </Typography>
-                        <Typography variant="h4" component="h1" gutterBottom align="center">
-                            odpowiedz na 5 prostych pytań i odbierz bon o wartości 50 zł!
-        </Typography>
-                        <Button variant="contained" onClick={() => setIsRunning(true)} noLinkStyle>
-                            Zaczynamy...
-        </Button>
-
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>{error.message}</div>;
+    if (user) {
+        return (
+            (isRunning ? (
+                <QuizComponent />
+            ) : (
+                    <>
+                        <Container maxWidth="sm" sx={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)'
+                        }} fixed>
+                            <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
+                                <Typography variant="h4" component="h1" gutterBottom align="center">
+                                    Rozwiąż Quiz aby uzyskać nagrodę
+                        </Typography>
+                                <Typography variant="h7" component="h3" gutterBottom align="center">
+                                    odpowiedz na 5 prostych pytań i odbierz bon o wartości 50 zł!
+                        </Typography>
+                                <Button variant="contained" sx={{ p: 1, m: 3 }} onClick={() => setIsRunning(true)} noLinkStyle>
+                                    Zaczynamy...
+                        </Button>
+                            </Box>
+                        </Container>
                         <Copyright />
-                    </Box>
-                </Container>
-            ))
-    );
+                    </>
+                ))
+        );
+    }
 }
+
+
+export default withPageAuthRequired(Quiz, {
+    onRedirecting: () => <Loading />,
+    onError: error => <p>{error.message}</p>
+})

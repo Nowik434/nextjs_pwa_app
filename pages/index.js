@@ -4,10 +4,11 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Copyright from '../src/Copyright';
 import Button from '@mui/material/Button';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+
 
 export default function Index() {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <Container maxWidth="sm">
@@ -16,10 +17,11 @@ export default function Index() {
           moja appka
         </Typography>
         <Button variant="contained" onClick={() => router.push('/introduction')} noLinkStyle>
-          strona główna
+          Przejdź do logowania
         </Button>
         <Copyright />
       </Box>
     </Container>
   );
+  // return <a href="/api/auth/login">Login</a>
 }
