@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, {useState, useContext} from 'react';
 import { useRouter } from 'next/router';
-import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -12,23 +11,41 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
 import Loading from '../../components/loading/loading';
+import { ItemsContext } from '../api/context';
 
 
 
-function Introduction() {
+export default function Introduction() {
     const router = useRouter()
     const [rodoIsChecked, setRodoIsChecked] = React.useState(false);
     const [marketingIsChecked, setMarketingIsChecked] = React.useState(false);
-    const { user, error, isLoading } = useUser();
-console.log(user)
-    if (isLoading) return <div>Loading...</div>;
-    if (error) return <div>{error.message}</div>;
-    if (user) {
+    const { items, setItems } = useContext(ItemsContext);
+  console.log(items)
+
+
+  const [item, setItem] = useState({
+    id: 'recQA9ISKQXTrrcadds6',
+    name: 'Anna Nowddddak',
+    marketing: true,
+    rodo: true
+  });
+  const { addItem } = useContext(ItemsContext);
+
+  const handleSubmit = (e) => {
+      console.log("HANDLE SUBMIT")
+    e.preventDefault();
+    console.log(item)
+    addItem(item);
+    setItem("");
+  };
+  
+
     return (
         <Container maxWidth="sm">
+            
             <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
                 <Typography variant="h4" component="h1" gutterBottom align="center">
-                    Witaj
+                    Witaj {items.name}
         </Typography>
                 <Typography variant="h4" component="h1" gutterBottom align="center">
                     rozwiąż zadania i uzyskaj nagrodę o wartści 50 zł.
@@ -72,6 +89,19 @@ console.log(user)
                     </ListItem>
                 </List>
 
+                <form className="form my-6" onSubmit={handleSubmit}>
+                <input
+                type="text"
+                name="item"
+                value={item}
+                // onChange={(e) => setItem(e.target.value)}
+                placeholder="ex. Eggs"
+                className="flex-1 border border-gray-200 p-2 mr-2 rounded-lg appearance-none focus:outline-none focus:border-gray-500"
+                />
+                <Button type="submit" variant="contained" noLinkStyle>
+                    add item
+                </Button>
+                </form>
 
                 <Button variant="contained" onClick={() => router.push('/quiz')} noLinkStyle>
                     Zatwierdź
@@ -80,10 +110,3 @@ console.log(user)
         </Container>
     );
     }
-}
-
-
-export default withPageAuthRequired(Introduction, {
-    onRedirecting: () => <Loading />,
-    onError: error => <p>{error.message}</p>
-  })
