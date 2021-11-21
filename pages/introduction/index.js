@@ -77,7 +77,6 @@ export default function Introduction() {
                                 />
                             </ListItemIcon>
                             <ListItemText>
-
                             Wyrażam zgodę  na przetwarzanie moich danych osobowych, w celu wysyłania informacji handlowych drogą elektroniczną przez (nazwa administratora danych) zgodnie z europejskim rozporządzeniem o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (Dz. Urz. UE L nr 119, str. 1) oraz ustawą z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną (Dz.U. 2002 nr 144 poz. 1204z zm.)
     
                             </ListItemText>
