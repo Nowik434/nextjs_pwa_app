@@ -17,9 +17,9 @@ import { ItemsContext } from '../api/context';
 
 export default function Introduction() {
     const router = useRouter()
-    const [rodoIsChecked, setRodoIsChecked] = React.useState(false);
-    const [marketingIsChecked, setMarketingIsChecked] = React.useState(false);
-    const [isConfirmed, setIsConfirmed] = React.useState(false);
+    const [rodoIsChecked, setRodoIsChecked] = useState(false);
+    const [marketingIsChecked, setMarketingIsChecked] = useState(false);
+    const [isConfirmed, setIsConfirmed] = useState(false);
     const { items, setItems, updateItem } = useContext(ItemsContext);
   console.log(items)
 
