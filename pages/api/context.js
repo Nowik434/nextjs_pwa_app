@@ -25,12 +25,37 @@ const ItemsProvider = ({ children }) => {
         }
     };
 
+    const updateItem = async (updatedItem) => {
+        console.log('UPDATED ITEM', updatedItem)
+        try {
+            // we will send a PUT request with the updated information
+            const res = await fetch("/api/updateUserData", {
+                method: "PUT",
+                body: JSON.stringify(updatedItem),
+                headers: { "Content-Type": "application/json" },
+            });
+            await res.json();
+            // then we will update the 'items' by replacing the fields of existing item.
+            // setItems((prevItems) => {
+            //     const existingItems = [...prevItems];
+            //     const existingItem = existingItems.find(
+            //         (item) => item.id === updatedItem.id
+            //     );
+            //     existingItem.fields = updatedItem.fields;
+            //     return existingItems;
+            // });
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     return (
         <ItemsContext.Provider
             value={{
                 items,
                 setItems,
                 addItem,
+                updateItem
             }}
         >
             {children}

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useRouter } from 'next/router'
 import { questions } from '../../pages/api/api';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import ButtonGroup from '@mui/material/ButtonGroup';
+import { ItemsContext } from '../../pages/api/context';
 
 export default function QuizComponent() {
     console.log(questions)
@@ -13,6 +13,8 @@ export default function QuizComponent() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
+
+    const { items, updateItem } = useContext(ItemsContext);
 
     const handleAnswerOptionClick = (isCorrect) => {
         if (isCorrect) {
@@ -27,6 +29,19 @@ export default function QuizComponent() {
         }
     };
 
+    const item = {
+        id: items.id,
+        fields: {
+            score: score,
+        }
+    }
+
+    const setScoreInDatabase = (e) => {
+        e.preventDefault();
+        updateItem(item);
+        router.push('/reward')
+    }
+
     return (
         <Container maxWidth="sm" sx={{
             position: 'absolute',
@@ -38,9 +53,9 @@ export default function QuizComponent() {
                 {showScore ? (
                     <>
                         <Typography variant="h4" component="h1" gutterBottom align="center">
-                            Zdobyłeś {score} pkt. z {questions.length}
+                            Brawo !!! Zdobyłeś {score} pkt. z {questions.length} możesz teraz odebrać swoją nagrodę...
                         </Typography>
-                        <Button onClick={() => router.push('/')}>Zaczynamy...</Button>
+                        <Button variant="contained" onClick={(e) => setScoreInDatabase(e)}>wybierz nagrodę</Button>
                     </>
                 ) : (
                         <>

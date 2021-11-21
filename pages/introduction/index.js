@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import { useRouter } from 'next/router';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -19,30 +19,44 @@ export default function Introduction() {
     const router = useRouter()
     const [rodoIsChecked, setRodoIsChecked] = React.useState(false);
     const [marketingIsChecked, setMarketingIsChecked] = React.useState(false);
-    const { items, setItems } = useContext(ItemsContext);
+    const [isConfirmed, setIsConfirmed] = React.useState(false);
+    const { items, setItems, updateItem } = useContext(ItemsContext);
   console.log(items)
 
 
   const [item, setItem] = useState({
-    id: 'recQA9ISKQXTrrcadds6',
-    name: 'Anna Nowddddak',
-    marketing: true,
-    rodo: true
+    id: items.id,
+    fields: {
+        name: 'Anna Nowd64ddak',
+        rodo: rodoIsChecked,
+        marketing: marketingIsChecked
+    }
   });
-  const { addItem } = useContext(ItemsContext);
 
-  const handleSubmit = (e) => {
-      console.log("HANDLE SUBMIT")
+
+  const handleClick = (e) => {
     e.preventDefault();
-    console.log(item)
-    addItem(item);
+    setIsConfirmed(true)
+    updateItem(item);
     setItem("");
+    router.push('/quiz')
   };
+
+  useEffect(() => {
+    setItem({
+        id: items.id,
+        fields: {
+            name: 'Anna Nowd64ddak',
+            rodo: rodoIsChecked,
+            marketing: marketingIsChecked
+        }
+      })
+    console.log("checkedItems: ", item);
+  }, [rodoIsChecked, marketingIsChecked]);  
   
 
     return (
         <Container maxWidth="sm">
-            
             <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
                 <Typography variant="h4" component="h1" gutterBottom align="center">
                     Witaj {items.name}
@@ -53,11 +67,11 @@ export default function Introduction() {
 
                 <List sx={{ width: '100%', maxWidth: 1360, bgcolor: 'background.paper' }}>
                 <ListItem>
-                        <ListItemButton role={undefined} onClick={() => setRodoIsChecked(true)} dense>
+                        <ListItemButton role={undefined} onClick={() => setRodoIsChecked(!rodoIsChecked)} dense>
                             <ListItemIcon>
                                 <Checkbox
                                     edge="start"
-                                    checked={false}
+                                    checked={rodoIsChecked}
                                     tabIndex={-1}
                                     disableRipple
                                 />
@@ -71,11 +85,11 @@ export default function Introduction() {
                     </ListItem>
 
                     <ListItem>
-                        <ListItemButton role={undefined} onClick={() => setRodoIsChecked(true)} dense>
+                        <ListItemButton role={undefined} onClick={() => setMarketingIsChecked(!marketingIsChecked)} dense>
                             <ListItemIcon>
                                 <Checkbox
                                     edge="start"
-                                    checked={false}
+                                    checked={marketingIsChecked}
                                     tabIndex={-1}
                                     disableRipple
                                 />
@@ -88,24 +102,12 @@ export default function Introduction() {
                         </ListItemButton>
                     </ListItem>
                 </List>
-
-                <form className="form my-6" onSubmit={handleSubmit}>
-                <input
-                type="text"
-                name="item"
-                value={item}
-                // onChange={(e) => setItem(e.target.value)}
-                placeholder="ex. Eggs"
-                className="flex-1 border border-gray-200 p-2 mr-2 rounded-lg appearance-none focus:outline-none focus:border-gray-500"
-                />
-                <Button type="submit" variant="contained" noLinkStyle>
-                    add item
-                </Button>
-                </form>
-
-                <Button variant="contained" onClick={() => router.push('/quiz')} noLinkStyle>
-                    Zatwierdź
-        </Button>
+                {rodoIsChecked && marketingIsChecked ? 
+                (<Button variant="contained" onClick={(e) => handleClick(e)} noLinkStyle>
+                    Przejdź dalej
+                </Button>) :
+                <Button variant="contained" disabled>Zaznacz wszystkie zgody aby przejść dalej</Button>     
+                }
             </Box>
         </Container>
     );

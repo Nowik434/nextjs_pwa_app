@@ -30,7 +30,7 @@ export default function Index({ initialItems }) {
           właśnie zeskanowałeś swój kod i możesz wziąć udział w quizie z gwarantowaną nagrodą.
         </Typography>
         <Button variant="contained" onClick={() => router.push('/introduction')} noLinkStyle>
-          Przejdź do logowania
+          Przejdź dalej
         </Button>
         <Copyright />
       </Box>
@@ -44,10 +44,10 @@ export const getServerSideProps = async (context) => {
   const minified1 = minifyRecords(items, id)
   const minified2 = { ...minified1 }
   // const data = await minified.json()
-  // console.log('fffffffffff', minified2[0])
+  console.log('fffffffffff', JSON.parse(JSON.stringify(minified2[0])))
   return {
     props: {
-      initialItems: minified2[0],
+      initialItems: JSON.parse(JSON.stringify(minified2[0])),
     },
   }
 }
