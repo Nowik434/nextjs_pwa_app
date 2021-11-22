@@ -14,7 +14,6 @@ import Loading from '../../components/loading/loading';
 import { ItemsContext } from '../api/context';
 
 
-
 export default function Introduction() {
     const router = useRouter()
     const [rodoIsChecked, setRodoIsChecked] = useState(false);
