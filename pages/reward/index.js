@@ -12,14 +12,6 @@ export default function Reward() {
 
     const { items, updateItem } = useContext(ItemsContext);
 
-
-    const item = {
-        id: items.id,
-        fields: {
-            reward: reward,
-        }
-    }
-
     const handleClick = (e) => {
         console.log(e.target.name)
         e.preventDefault();
@@ -29,7 +21,12 @@ export default function Reward() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('reward', reward)
-        updateItem(item);
+        updateItem({
+            id: items.id,
+            fields: {
+                reward: reward,
+            }
+        });
         router.push('/ending')
     }
 

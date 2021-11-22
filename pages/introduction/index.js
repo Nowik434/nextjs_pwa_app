@@ -24,14 +24,7 @@ export default function Introduction() {
   console.log(items)
 
 
-  const [item, setItem] = useState({
-    id: items.id,
-    fields: {
-        name: 'Anna Nowd64ddak',
-        rodo: rodoIsChecked,
-        marketing: marketingIsChecked
-    }
-  });
+  const [item, setItem] = useState();
 
 
   const handleClick = (e) => {
@@ -46,7 +39,6 @@ export default function Introduction() {
     setItem({
         id: items.id,
         fields: {
-            name: 'Anna Nowd64ddak',
             rodo: rodoIsChecked,
             marketing: marketingIsChecked
         }
@@ -59,7 +51,7 @@ export default function Introduction() {
         <Container maxWidth="sm">
             <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
                 <Typography variant="h4" component="h1" gutterBottom align="center">
-                    Witaj {items.name}
+                    Witaj {items ? items.name : 'noname'}
         </Typography>
                 <Typography variant="h4" component="h1" gutterBottom align="center">
                     rozwiąż zadania i uzyskaj nagrodę o wartści 50 zł.
