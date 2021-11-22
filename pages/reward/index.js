@@ -18,6 +18,7 @@ export default function Reward() {
         setReward(e.target.name);
     }
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('reward', reward)
