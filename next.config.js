@@ -12,5 +12,8 @@ module.exports = withPWA({
     AIRTABLE_BASE_ID: process.env.AIRTABLE_BASE_ID,
     AIRTABLE_TABLE_NAME: process.env.AIRTABLE_TABLE_NAME
   },
-  target: 'serverless'
+  target: 'serverless',
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 });
