@@ -22,7 +22,6 @@ export default function Introduction() {
     const { items, setItems, updateItem } = useContext(ItemsContext);
   console.log(items)
 
-
   const [item, setItem] = useState();
 
   const handleClick = (e) => {
