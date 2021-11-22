@@ -2,12 +2,14 @@
   "name": "talentcoin",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "npm run export",
+    "test": "jest --passWithNoTests",
+    "lint": "eslint src",
+    "dev": "next",
     "start": "next start",
-    "lint": "next lint",
+    "build": "npm run export",
     "export": "next build && next export",
-    "deploy": "yarn build && next export"
+    "deploy": "yarn build && next export",
+    "format": "prettier --ignore-path .gitignore --write “**/*.+(js|json)"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^1.6.1",
