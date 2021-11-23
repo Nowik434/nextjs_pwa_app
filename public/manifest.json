@@ -6,7 +6,7 @@
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "/?source=pwa",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
@@ -57,7 +57,7 @@
       "origin": "https://nextjs-pwa-app-pdkq6xylt-nowik434.vercel.app/?id=recQA9ISKQXTrrca6"
     },
     {
-      "origin": "https://nextjs-pwa-app-pdkq6xylt-nowik434.vercel.app/"
+      "origin": "https://nextjs-pwa-app-pdkq6xylt-nowik434.vercel.app/?source=pwa"
     }
   ]
 }
