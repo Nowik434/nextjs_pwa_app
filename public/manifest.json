@@ -48,5 +48,16 @@
       "sizes": "512x512",
       "type": "image/png"
     }
+  ],
+  "url_handlers": [
+    {
+      "origin": "https://nextjs-pwa-app-pdkq6xylt-nowik434.vercel.app/"
+    },
+    {
+      "origin": "https://nextjs-pwa-app-pdkq6xylt-nowik434.vercel.app/?id=recQA9ISKQXTrrca6"
+    },
+    {
+      "origin": "https://nextjs-pwa-app-pdkq6xylt-nowik434.vercel.app/"
+    }
   ]
 }
