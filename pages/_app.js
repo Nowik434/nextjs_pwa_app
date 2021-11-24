@@ -13,6 +13,35 @@ const Airtable = require('airtable');
 export default function MyApp(props) {
   const { Component, pageProps } = props;
 
+  useEffect(() => {
+    console.log("window.innerHeight", window.innerHeight);
+    var isTooSoon = true;
+    var promptEvent;
+
+    window.addEventListener('beforeinstallprompt', function (e) {
+      e.preventDefault();
+      promptEvent = e;
+      listenToUserAction();
+    });
+
+    function listenToUserAction() {
+      const installBtn = document.querySelector(".install-btn");
+      installBtn.addEventListener("click", presentAddToHome);
+    }
+
+    function presentAddToHome() {
+      promptEvent.prompt();
+      promptEvent.userChoice
+        .then(choice => {
+          if (choice.outcome === 'accepted') {
+            console.log('User accepted');
+          } else {
+            console.log('User dismissed');
+          }
+        })
+    }
+  }, []);
+
   return (
     <>
       <Head>
@@ -22,6 +51,7 @@ export default function MyApp(props) {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <ItemsProvider>
+          <button className="install-btn">dodaj do ekranu głównego</button>
           <Component {...pageProps} />
         </ItemsProvider>
       </ThemeProvider>
