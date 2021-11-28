@@ -19,25 +19,17 @@ export default function Quiz() {
             <QuizComponent />
         ) : (
                 <>
-                    <Container maxWidth="sm" sx={{
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)'
-                    }} fixed>
-                        <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
-                            <Typography variant="h4" component="h1" gutterBottom align="center">
-                                Rozwiąż Quiz aby uzyskać nagrodę
+                    <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
+                        <Typography variant="h4" component="h1" gutterBottom align="center">
+                            Rozwiąż Quiz aby uzyskać nagrodę
                         </Typography>
-                            <Typography variant="h7" component="h3" gutterBottom align="center">
-                                odpowiedz na 5 prostych pytań i odbierz bon o wartości 50 zł!
+                        <Typography variant="h7" component="h3" gutterBottom align="center">
+                            odpowiedz na 5 prostych pytań i odbierz bon o wartości 50 zł!
                         </Typography>
-                            <Button variant="contained" sx={{ p: 1, m: 3 }} onClick={() => setIsRunning(true)} noLinkStyle>
-                                Zaczynamy...
+                        <Button variant="contained" sx={{ p: 1, m: 3 }} onClick={() => setIsRunning(true)} noLinkStyle>
+                            Zaczynamy...
                         </Button>
-                        </Box>
-                    </Container>
-                    <Copyright />
+                    </Box>
                 </>
             ))
     );
