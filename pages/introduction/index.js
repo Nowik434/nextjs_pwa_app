@@ -34,6 +34,7 @@ export default function Introduction() {
   };
 
   useEffect(() => {
+    items ?
     setItem({
         id: items.id,
         fields: {
@@ -41,6 +42,7 @@ export default function Introduction() {
             marketing: marketingIsChecked
         }
       })
+    : router.push('/error404')
     console.log("checkedItems: ", item);
   }, [rodoIsChecked, marketingIsChecked]);  
   

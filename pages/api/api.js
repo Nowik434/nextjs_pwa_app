@@ -8,39 +8,57 @@ export default function handler(req, res) {
 
 export const questions = [
   {
-    questionText: 'What is the capital of France?',
+    questionText: 'Które stwierdzenia dotyczące FundacjI VCC są prawdziwe:',
     answerOptions: [
-      { answerText: 'New York', isCorrect: false },
-      { answerText: 'London', isCorrect: false },
-      { answerText: 'Paris', isCorrect: true },
-      { answerText: 'Dublin', isCorrect: false },
+      { answerText: 'Fundacja VCC jest obecnie podmiotem rynkowym uprawnionym do certyfikowania największej liczby kwalifikacji rynkowych włączonych do ZSK', isCorrect: false },
+      { answerText: 'Fundacja VCC wydała ponad 100 000 certyfikatów', isCorrect: false },
+      { answerText: 'Fundacja VCC w swoim portfolio posiada ponad 100 modułów z różnych branż', isCorrect: false },
+      { answerText: 'Wszystkie odpowiedzi są prawidłowe', isCorrect: true },
     ],
   },
   {
-    questionText: 'Who is CEO of Tesla?',
+    questionText: 'Co oznacza skrót ZSK?',
     answerOptions: [
-      { answerText: 'Jeff Bezos', isCorrect: false },
-      { answerText: 'Elon Musk', isCorrect: true },
-      { answerText: 'Bill Gates', isCorrect: false },
-      { answerText: 'Tony Stark', isCorrect: false },
+      { answerText: 'Zawodowy System Kwalifikacji', isCorrect: false },
+      { answerText: 'Zintegrowany System Kwalifikacji', isCorrect: true },
+      { answerText: 'Zespolony System Kwalifikacji', isCorrect: false },
+      { answerText: 'Żadna z powyższych', isCorrect: false },
     ],
   },
   {
-    questionText: 'The iPhone was created by which company?',
+    questionText: 'Jakie są rodzaje kwalifikacji?',
     answerOptions: [
-      { answerText: 'Apple', isCorrect: true },
-      { answerText: 'Intel', isCorrect: false },
-      { answerText: 'Amazon', isCorrect: false },
-      { answerText: 'Microsoft', isCorrect: false },
+      { answerText: 'Pełne i połowiczne', isCorrect: false },
+      { answerText: 'Pełne i cząstkowe', isCorrect: true },
+      { answerText: 'Całościowe i niepełne', isCorrect: false },
+      { answerText: 'Żadna z powyższych', isCorrect: false },
     ],
   },
   {
-    questionText: 'How many Harry Potter books are there?',
+    questionText: 'Kwalifikacje pełne to:',
     answerOptions: [
-      { answerText: '1', isCorrect: false },
-      { answerText: '4', isCorrect: false },
-      { answerText: '6', isCorrect: false },
-      { answerText: '7', isCorrect: true },
+      { answerText: 'Świadectwo ukończenia szkoły podstawowej', isCorrect: false },
+      { answerText: 'Świadectwo dojrzałości (matura)', isCorrect: false },
+      { answerText: 'Dyplom potwierdzający uzyskanie tytułu zawodowego licencjata', isCorrect: false },
+      { answerText: 'Wszystkie odpowiedzi są prawidłowe', isCorrect: true },
+    ],
+  },
+  {
+    questionText: 'Przykładem kwalifikacji rynkowej jest:',
+    answerOptions: [
+      { answerText: 'Prawo jazdy', isCorrect: false },
+      { answerText: 'Programowanie i obsługiwanie procesu druku 3D', isCorrect: true },
+      { answerText: 'Dyplom doktora nauk', isCorrect: false },
+      { answerText: 'Wszystkie odpowiedzi są prawidłowe', isCorrect: false },
+    ],
+  },
+  {
+    questionText: 'Ile poziomów zawiera Polska Rama Kwalifikacji?',
+    answerOptions: [
+      { answerText: '7', isCorrect: false },
+      { answerText: '8', isCorrect: true },
+      { answerText: '9', isCorrect: false },
+      { answerText: '10', isCorrect: false },
     ],
   },
 ];

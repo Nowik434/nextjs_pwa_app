@@ -18,10 +18,11 @@ export default function Index({ initialItems }) {
 
   useEffect(() => {
     setItems(initialItems);
+    // localStorage.setItem('id', initialItems.id);
   }, [initialItems, setItems]);
 
   return (
-    <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
+    items && items.score == null ? (<Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
       <Typography variant="h4" component="h1" gutterBottom align="center">
         Witaj {items ? items.name : null}
       </Typography>
@@ -32,7 +33,7 @@ export default function Index({ initialItems }) {
         Przejdź dalej
         </Button>
       <InstallPwaSnackbar />
-    </Box>
+    </Box>) : <p>Już wziąłeś udział w konkursie...</p>
   );
 }
 
@@ -48,9 +49,10 @@ export const getServerSideProps = async (context) => {
       initialItems: minified2[0] ?? {
         id: 543564,
         fields: {
-          name: 'Anna Nowd64ddak',
+          name: 'Anna Test',
           rodo: true,
-          marketing: true
+          marketing: true,
+          score: null
         }
       },
     },

@@ -52,9 +52,25 @@ export default function QuizComponent() {
             <Box sx={{ my: 4 }}>
                 {showScore ? (
                     <>
-                        <Typography variant="h4" component="h1" gutterBottom align="center">
-                            Brawo !!! Zdobyłeś {score} pkt. z {questions.length} możesz teraz odebrać swoją nagrodę...
-                        </Typography>
+                        {/* <Typography variant="h4" component="h1" gutterBottom align="center">
+                            Brawo !!! Zdobyłeś {
+                                score} pkt. z {questions.length} możesz teraz odebrać swoją nagrodę...
+                        </Typography> */}
+                        {score == 6 ?
+                            <Typography variant="h4" component="h1" gutterBottom align="center">
+                                Gratulacje! Udzieliłeś/aś prawidłowo odpowiedzi na wszystkie pytania! Możesz teraz wybrać nagrodę!
+                                </Typography> : null
+                        }
+                        {score > 4 && score < 6 ?
+                            <Typography variant="h4" component="h1" gutterBottom align="center">
+                                Gratulacje! Odpowiedziałeś/aś prawidłowo na większość pytań! Możesz teraz wybrać nagrodę!
+                                </Typography> : null
+                        }
+                        {score < 4 ?
+                            <Typography variant="h4" component="h1" gutterBottom align="center">
+                                Niestety odpowiedziałeś/aś błędnie na większość pytań! Możesz spróbować jeszcze raz!
+                                </Typography> : null
+                        }
                         <Button variant="contained" onClick={(e) => setScoreInDatabase(e)}>wybierz nagrodę</Button>
                     </>
                 ) : (

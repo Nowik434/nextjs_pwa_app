@@ -11,6 +11,7 @@ const getMinifiedRecord = (record) => {
         name: record.fields.name,
         marketing: record.fields.marketing,
         rodo: record.fields.rodo,
+        score: record.fields.score !== undefined ? record.fields.score : null,
     }
 }
 

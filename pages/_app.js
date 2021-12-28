@@ -11,62 +11,53 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 
 const Airtable = require('airtable');
-// const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(process.env.AIRTABLE_BASE_ID);
-// var myDynamicManifest = {
-//   "name": "talentcoin",
-//   "short_name": "talentcoin",
-//   "theme_color": "#d2ab67",
-//   "background_color": "#d2ab67",
-//   "display": "standalone",
-//   "orientation": "portrait",
-//   "scope": "/",
-//   "start_url": "/",
-//   "icons": [
-//     {
-//       "src": "images/icons/icon-72x72.png",
-//       "sizes": "72x72",
-//       "type": "image/png"
-//     },
-//     {
-//       "src": "images/icons/icon-96x96.png",
-//       "sizes": "96x96",
-//       "type": "image/png"
-//     },
-//     {
-//       "src": "images/icons/icon-128x128.png",
-//       "sizes": "128x128",
-//       "type": "image/png"
-//     },
-//     {
-//       "src": "images/icons/icon-144x144.png",
-//       "sizes": "144x144",
-//       "type": "image/png"
-//     },
-//     {
-//       "src": "images/icons/icon-152x152.png",
-//       "sizes": "152x152",
-//       "type": "image/png"
-//     },
-//     {
-//       "src": "images/icons/icon-192x192.png",
-//       "sizes": "192x192",
-//       "type": "image/png"
-//     },
-//     {
-//       "src": "images/icons/icon-384x384.png",
-//       "sizes": "384x384",
-//       "type": "image/png"
-//     },
-//     {
-//       "src": "images/icons/icon-512x512.png",
-//       "sizes": "512x512",
-//       "type": "image/png"
-//     }
-//   ],
-// }
+
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
+
+
+  useEffect(() => {
+    console.log("USE EFFECT ON APP COMPONENT")
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function () {
+      OneSignal.init({
+        appId: "bf391442-24ef-44ab-9074-e22d69d8f2b6",
+        safari_web_id: "web.onesignal.auto.271ef36b-44de-4fef-87dc-9a2f81b1418e",
+        notifyButton: {
+          enable: true,
+        },
+        allowLocalhostAsSecureOrigin: true,
+      });
+    });
+
+    return () => {
+      window.OneSignal = undefined;
+    };
+  }, []);
+
+  // const router = useRouter();
+  // const { storeCode } = router.asPath;
+  // console.log('ssssssssssssssssssssssssssssssssssssssssssssss', router.asPath)
+  // useEffect(() => {
+  //   console.log('ssssssssssssssssssssssssssssssssssssssssssssss', document.getElementById("manifest"))
+  //   if (router.asPath) {
+  //     console.log('ssssssssssssssssssssssssssssssssssssssssssssss', document.getElementById("manifest"))
+  //     const manifestElement = document.getElementById("manifest");
+  //     const manifestString = JSON.stringify({
+  //       ...manifest,
+  //       start_url: `/s/${router.asPath}`,
+  //     });
+  //     manifestElement?.setAttribute(
+  //       "href",
+  //       "data:application/json;charset=utf-8," + encodeURIComponent(manifestString),
+  //     );
+  //     console.log(manifestElement, manifestString)
+  //     console.log('ssssssssssssssssssssssssssssssssssssssssssssss', document.getElementById("manifest"))
+  //   }
+  // }, [router.asPath]);
+
+
   // const router = useRouter();
   // const { id } = router.query;
   // console.log("ROUTER ID", router)
