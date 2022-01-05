@@ -24,10 +24,10 @@ export default function Quiz() {
                             Rozwiąż Quiz aby uzyskać nagrodę
                         </Typography>
                         <Typography variant="h7" component="h3" gutterBottom align="center">
-                            odpowiedz na 5 prostych pytań i odbierz bon o wartości 50 zł!
+                            odpowiedz na 6 pytań i odbierz gwarantowaną nagrodę!
                         </Typography>
                         <Button variant="contained" sx={{ p: 1, m: 3 }} onClick={() => setIsRunning(true)} noLinkStyle>
-                            Zaczynamy...
+                            Rozpocznij...
                         </Button>
                     </Box>
                 </>

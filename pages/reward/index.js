@@ -97,32 +97,13 @@ import Grid from '@mui/material/Grid';
 import { useRouter } from 'next/router'
 import { ItemsContext } from '../api/context';
 import CardMedia from '@mui/material/CardMedia';
-
+import Box from '@mui/material/Box';
 import ksiazka from '../../public/static/ksiazka.jpg';
 import empik from '../../public/static/empik.png';
 import ladowarka from '../../public/static/ladowarka.png';
 
-console.log('KSIAZKA', ksiazka)
-const tiers = [
-    {
-        title: 'Książka',
-        img: ksiazka.src,
-        buttonText: 'Wybierz',
-        buttonVariant: 'outlined',
-    },
-    {
-        title: 'Kupon Empik',
-        img: empik.src,
-        buttonText: 'Wybierz',
-        buttonVariant: 'outlined',
-    },
-    {
-        title: 'Ładowarka indukcyjna',
-        img: ladowarka.src,
-        buttonText: 'Wybierz',
-        buttonVariant: 'outlined',
-    },
-];
+// console.log('KSIAZKA', ksiazka)
+
 
 
 
@@ -131,10 +112,42 @@ function PricingContent() {
     const [reward, setReward] = useState();
     const { items, updateItem } = useContext(ItemsContext);
 
-    const handleClick = (e) => {
-        console.log(e.target.name)
+    const [tiers, setTiers] = useState([
+        {
+            id: 0,
+            title: 'Książka',
+            img: ksiazka.src,
+            buttonText: 'Wybierz',
+            buttonVariant: 'outlined',
+            chosen: false,
+        },
+        {
+            id: 1,
+            title: 'Kupon Empik',
+            img: empik.src,
+            buttonText: 'Wybierz',
+            buttonVariant: 'outlined',
+            chosen: false,
+        },
+        {
+            id: 2,
+            title: 'Ładowarka indukcyjna',
+            img: ladowarka.src,
+            buttonText: 'Wybierz',
+            buttonVariant: 'outlined',
+            chosen: false,
+        },
+    ]);
+
+    const handleClick = (e, tier, i) => {
         e.preventDefault();
-        tiers.buttonVariant = 'contained'
+        if (tier.id == i) {
+            tiers.map(tier => {
+                tier.buttonVariant = 'outlined';
+            })
+            tier.buttonVariant = 'contained';
+        }
+
         setReward(e.target.name);
     }
 
@@ -153,46 +166,53 @@ function PricingContent() {
     return (
         <React.Fragment>
             <form onSubmit={(e) => handleSubmit(e)}>
-                <Grid container spacing={5} alignItems="flex-end" sx={{ mt: 8 }}>
-                    {tiers.map((tier) => (
-                        <Grid
-                            item
-                            key={tier.title}
-                            xs={12}
-                            sm={tier.title === 'Enterprise' ? 12 : 6}
-                            md={4}
-                        >
-                            <Card>
-                                <CardHeader
-                                    title={tier.title}
-                                    titleTypographyProps={{ align: 'center' }}
-                                    subheaderTypographyProps={{
-                                        align: 'center',
-                                    }}
-                                    sx={{
-                                        backgroundColor: (theme) =>
-                                            theme.palette.mode === 'light'
-                                                ? theme.palette.grey[200]
-                                                : theme.palette.grey[700],
-                                    }}
-                                />
-                                <CardMedia
-                                    component="img"
-                                    height="140"
-                                    image={tier.img}
-                                    alt="green iguana"
-                                />
-                                <CardActions>
-                                    <Button onClick={(e) => handleClick(e)} fullWidth variant={tier.buttonVariant} name={tier.title}>
-                                        {tier.buttonText}
-                                    </Button>
-                                </CardActions>
-                            </Card>
-                        </Grid>
-                    ))}
-                </Grid>
-
-                <Button type="submit">Wyślij nagrodę</Button>
+                <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
+                    <Grid container spacing={5} alignItems="center" sx={{ mt: 8 }}>
+                        {tiers.map((tier, i) => (
+                            <Grid
+                                item
+                                key={tier.title}
+                                xs={12}
+                                sm={tier.title === 'Enterprise' ? 12 : 6}
+                                md={4}
+                            >
+                                <Card>
+                                    <CardHeader
+                                        title={tier.title}
+                                        titleTypographyProps={{ align: 'center' }}
+                                        subheaderTypographyProps={{
+                                            align: 'center',
+                                        }}
+                                        sx={{
+                                            backgroundColor: (theme) =>
+                                                theme.palette.mode === 'light'
+                                                    ? theme.palette.grey[200]
+                                                    : theme.palette.grey[700],
+                                            minHeight: '93px',
+                                        }}
+                                    />
+                                    <CardMedia
+                                        component="img"
+                                        height="140"
+                                        image={tier.img}
+                                        alt="green iguana"
+                                    />
+                                    <CardActions>
+                                        <Button onClick={(e) => handleClick(e, tier, i)} fullWidth variant={tier.buttonVariant} name={tier.title}>
+                                            {tier.buttonText}
+                                        </Button>
+                                    </CardActions>
+                                </Card>
+                            </Grid>
+                        ))}
+                    </Grid>
+                    {reward ? (
+                        <Button type="submit" variant="contained" sx={{ mt: 8 }}>Zatwierdź wybraną nagrodę</Button>
+                    ) : (
+                            <Button type="submit" variant="outlined" disabled sx={{ mt: 8 }}>Musisz wybrać nagrodę...</Button>
+                        )
+                    }
+                </Box>
             </form>
         </React.Fragment >
     );

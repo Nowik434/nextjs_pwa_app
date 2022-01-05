@@ -57,11 +57,11 @@ export default function Introduction() {
     return (
         <Container maxWidth="sm">
             <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
-                <Typography variant="h4" component="h1" gutterBottom align="center">
+                {/* <Typography variant="h4" component="h1" gutterBottom align="center">
                     Witaj {items ? items.name : 'noname'}
-        </Typography>
+        </Typography> */}
                 <Typography variant="h4" component="h1" gutterBottom align="center">
-                    rozwiąż zadania i uzyskaj nagrodę o wartści 50 zł.
+                    Aby kontynuować musisz zaznaczyć poniższe zgody.
         </Typography>
 
                 <List sx={{ width: '100%', maxWidth: 1360, bgcolor: 'background.paper' }}>
