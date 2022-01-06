@@ -110,11 +110,14 @@ export default function MyApp(props) {
             position: 'absolute',
             top: '50%',
             left: '50%',
-            transform: 'translate(-50%, -50%)'
+            transform: 'translate(-50%, -50%)',
+            display: 'grid',
+            'align-items': 'center',
+            height: '100%',
           }} fixed>
             <Component {...pageProps} />
           </Container>
-          <Copyright />
+          {/* <Copyright /> */}
         </ItemsProvider>
       </ThemeProvider>
     </>

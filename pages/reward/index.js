@@ -167,7 +167,7 @@ function PricingContent() {
         <React.Fragment>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
-                    <Grid container spacing={5} alignItems="center" sx={{ mt: 8 }}>
+                    <Grid container spacing={5} alignItems="center" sx={{ mt: 2 }}>
                         {tiers.map((tier, i) => (
                             <Grid
                                 item

@@ -34,12 +34,9 @@ export default function Index({ initialItems }) {
         </Button>
       <InstallPwaSnackbar />
     </Box>) : (
-        <>
-          <Typography variant="h2" component="h1" gutterBottom align="center">
-            Już wziąłeś udział w konkursie... Wybrana przez Ciebie nagroda zostanie przesłna na twój adres email
+        <Typography variant="h2" component="h1" gutterBottom align="center">
+          Już wziąłeś udział w konkursie... Wybrana przez Ciebie nagroda zostanie przesłna na twój adres email
       </Typography>
-          <InstallPwaSnackbar />
-        </>
       )
   );
 }
