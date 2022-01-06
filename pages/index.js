@@ -56,7 +56,8 @@ export const getServerSideProps = async (context) => {
           name: 'Anna Test',
           rodo: true,
           marketing: true,
-          score: null
+          score: null,
+          email: 'test@test.pl'
         }
       },
     },

@@ -5,13 +5,14 @@ const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(process
 const table = base(process.env.AIRTABLE_TABLE_NAME);
 
 const getMinifiedRecord = (record) => {
-    console.log(record.getId())
+    // console.log(record.getId())
     return {
         id: record.getId(),
         name: record.fields.name,
         marketing: record.fields.marketing,
         rodo: record.fields.rodo,
         score: record.fields.score !== undefined ? record.fields.score : null,
+        email: record.fields.email !== undefined ? record.fields.email : null,
     }
 }
 
