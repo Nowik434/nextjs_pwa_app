@@ -11,7 +11,6 @@ import Image from 'next/image';
 
 const Ending = () => {
     const { items, updateItem } = useContext(ItemsContext);
-    const [item, setItem] = useState();
     const [email, setEmail] = useState('')
     const [emailError, setEmailError] = useState('')
     const [isSubmited, setIsSubmited] = useState(false)
@@ -27,23 +26,15 @@ const Ending = () => {
         }
     }
 
-    useEffect(() => {
+    const handleClick = (e) => {
+        e.preventDefault();
+        setIsSubmited(true)
         updateItem({
             id: items.id,
             fields: {
                 email
             }
         })
-        console.log(email);
-    }, [email, updateItem, items.id]);
-
-    const handleClick = (e) => {
-        e.preventDefault();
-        // console.log(e)
-        setIsSubmited(true)
-        updateItem(item);
-        setItem("");
-        // router.push('/quiz')
     };
 
     return (
