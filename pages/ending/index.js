@@ -20,7 +20,7 @@ const Ending = () => {
         var email = e.target.value
         setEmail(email)
         if (validator.isEmail(email)) {
-            setEmailError('podałeś poprawny aders email')
+            setEmailError('Podałeś poprawny aders email')
         } else {
             setEmailError('Błędny adres email!')
         }
@@ -49,9 +49,11 @@ const Ending = () => {
                     variant="outlined"
                     helperText={emailError}
                     onChange={(e) => validateEmail(e)} />
-                <Button variant="contained" onClick={(e) => handleClick(e)} noLinkStyle sx={{ mt: 2 }}>
+                {emailError == 'Podałeś poprawny aders email' ? (<Button variant="contained" onClick={(e) => handleClick(e)} noLinkStyle sx={{ mt: 2 }}>
                     Zatwierdź
-            </Button>
+            </Button>) : (<Button variant="contained" disabled noLinkStyle sx={{ mt: 2 }}>
+                        Musisz podać prawidłowy adres email
+            </Button>)}
             </FormControl>
         </Box>) : (
                 <>

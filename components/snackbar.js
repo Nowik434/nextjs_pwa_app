@@ -45,7 +45,7 @@ export default function InstallPwaSnackbar() {
 
    return (
       <div>
-         <Box sx={{ width: '100%' }}>
+         <Box sx={{ width: '100%', position: 'absolute', bottom: '0px', opacity: '0.87' }}>
             <Collapse in={open}>
                <Alert
                   action={

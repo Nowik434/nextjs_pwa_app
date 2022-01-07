@@ -9,6 +9,7 @@ import { ItemsProvider } from "./api/context";
 import { useRouter } from 'next/router';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
+import InstallPwaSnackbar from '../components/snackbar';
 
 const Airtable = require('airtable');
 
@@ -116,6 +117,7 @@ export default function MyApp(props) {
             height: '100%',
           }} fixed>
             <Component {...pageProps} />
+            <InstallPwaSnackbar />
           </Container>
           {/* <Copyright /> */}
         </ItemsProvider>

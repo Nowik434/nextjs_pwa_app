@@ -6,8 +6,9 @@ import Button from '@mui/material/Button';
 import { useRouter } from 'next/router';
 import { table, minifyRecords } from "./api/getUserData";
 import { ItemsContext } from './api/context';
-import InstallPwaSnackbar from '../components/snackbar';
+// import InstallPwaSnackbar from '../components/snackbar';
 import Loading from '../components/loading/loading';
+import Image from 'next/image';
 
 export default function Index({ initialItems }) {
   const router = useRouter();
@@ -27,6 +28,7 @@ export default function Index({ initialItems }) {
 
   return (
     loading ? (items && items.score == null ? (<Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
+      <Image src="/static/vcclogo.png" alt="gift" width={200} height={200} />
       <Typography variant="h4" component="h1" gutterBottom align="center">
         Witaj {items ? items.name : null}
       </Typography>
@@ -36,7 +38,7 @@ export default function Index({ initialItems }) {
       <Button variant="contained" onClick={() => router.push('/introduction')} sx={{ mb: 4 }}>
         Przejdź dalej
         </Button>
-      <InstallPwaSnackbar />
+      {/* <InstallPwaSnackbar /> */}
     </Box>) : (
         <Typography variant="h2" component="h1" gutterBottom align="center">
           Już wziąłeś udział w konkursie... Wybrana przez Ciebie nagroda zostanie przesłna na twój adres email
