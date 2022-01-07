@@ -10,7 +10,7 @@ import Image from 'next/image';
 
 
 const Ending = () => {
-    const { items, setItems, updateItem } = useContext(ItemsContext);
+    const { items, updateItem } = useContext(ItemsContext);
     const [item, setItem] = useState();
     const [email, setEmail] = useState('')
     const [emailError, setEmailError] = useState('')
@@ -28,14 +28,14 @@ const Ending = () => {
     }
 
     useEffect(() => {
-        setItem({
+        updateItem({
             id: items.id,
             fields: {
                 email
             }
         })
         console.log(email);
-    }, [email, items.id]);
+    }, [email, updateItem, items.id]);
 
     const handleClick = (e) => {
         e.preventDefault();

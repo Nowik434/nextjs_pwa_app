@@ -20,10 +20,10 @@ export default function Index({ initialItems }) {
   useEffect(() => {
     setItems(initialItems);
     setTimeout(() => {
-      setLoading(!loading)
+      setLoading(true)
     }, 1500)
     // localStorage.setItem('id', initialItems.id);
-  }, [initialItems, setItems]);
+  }, [initialItems, setItems, setLoading]);
 
   return (
     loading ? (items && items.score == null ? (<Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
