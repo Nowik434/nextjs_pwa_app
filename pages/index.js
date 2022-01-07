@@ -7,22 +7,26 @@ import { useRouter } from 'next/router';
 import { table, minifyRecords } from "./api/getUserData";
 import { ItemsContext } from './api/context';
 import InstallPwaSnackbar from '../components/snackbar';
+import Loading from '../components/loading/loading';
 
 export default function Index({ initialItems }) {
   const router = useRouter();
   console.log("INITIAL ITEMS", initialItems);
-  // console.log(router.query);
+  const [loading, setLoading] = useState(false);
   const { items, setItems } = useContext(ItemsContext);
   // console.log(ItemsContext)
   // console.log("MAIN INDEX")
 
   useEffect(() => {
     setItems(initialItems);
+    setTimeout(() => {
+      setLoading(!loading)
+    }, 1500)
     // localStorage.setItem('id', initialItems.id);
   }, [initialItems, setItems]);
 
   return (
-    items && items.score == null ? (<Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
+    loading ? (items && items.score == null ? (<Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
       <Typography variant="h4" component="h1" gutterBottom align="center">
         Witaj {items ? items.name : null}
       </Typography>
@@ -37,7 +41,7 @@ export default function Index({ initialItems }) {
         <Typography variant="h2" component="h1" gutterBottom align="center">
           Już wziąłeś udział w konkursie... Wybrana przez Ciebie nagroda zostanie przesłna na twój adres email
       </Typography>
-      )
+      )) : <Loading />
   );
 }
 
