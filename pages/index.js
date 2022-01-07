@@ -23,6 +23,7 @@ export default function Index({ initialItems }) {
     setTimeout(() => {
       setLoading(true)
     }, 1500)
+
     // localStorage.setItem('id', initialItems.id);
   }, [initialItems, setItems, setLoading]);
 
