@@ -116,13 +116,15 @@ export default function MyApp(props) {
             display: 'grid',
             'align-items': 'center',
             height: '100%',
+            'grid-template-columns': '1fr',
+            'grid-template-rows': '1fr',
           }} fixed>
             <Component {...pageProps} />
+            <InstallPwaSnackbar />
           </Container>
           {/* <Copyright /> */}
         </ItemsProvider>
       </ThemeProvider>
-      <InstallPwaSnackbar />
     </>
   );
 }

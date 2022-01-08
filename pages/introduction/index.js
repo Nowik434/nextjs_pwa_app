@@ -55,11 +55,7 @@ export default function Introduction() {
   
 
     return (
-        <Container maxWidth="sm">
-            <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
-                {/* <Typography variant="h4" component="h1" gutterBottom align="center">
-                    Witaj {items ? items.name : 'noname'}
-        </Typography> */}
+        <Container maxWidth="sm" sx={{mx: "auto", my: 4, textAlign: 'center'}}>
                 <Typography variant="h4" component="h1" gutterBottom align="center">
                     Aby kontynuować musisz zaznaczyć poniższe zgody.
         </Typography>
@@ -106,7 +102,6 @@ export default function Introduction() {
                 </Button>) :
                 <Button variant="contained" disabled>Zaznacz wszystkie zgody aby przejść dalej</Button>     
                 }
-            </Box>
         </Container>
     );
     }

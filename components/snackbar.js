@@ -45,7 +45,7 @@ export default function InstallPwaSnackbar() {
 
    return (
 
-      <Collapse in={open} sx={{ position: 'absolute', bottom: '0px' }}>
+      <Collapse in={open} sx={{ position: 'sticky', bottom: '0px' }}>
          <Alert
             action={
                <IconButton
