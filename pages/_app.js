@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import InstallPwaSnackbar from '../components/snackbar';
+import '../styles/globals.css'
 
 const Airtable = require('airtable');
 
@@ -106,22 +107,22 @@ export default function MyApp(props) {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <ItemsProvider>
+        <ItemsProvider style={{ height: '100%' }}>
           <Container maxWidth="sm" sx={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
+            // position: 'absolute',
+            // top: '50%',
+            // left: '50%',
+            // transform: 'translate(-50%, -50%)',
             display: 'grid',
             'align-items': 'center',
             height: '100%',
           }} fixed>
             <Component {...pageProps} />
-            <InstallPwaSnackbar />
           </Container>
           {/* <Copyright /> */}
         </ItemsProvider>
       </ThemeProvider>
+      <InstallPwaSnackbar />
     </>
   );
 }

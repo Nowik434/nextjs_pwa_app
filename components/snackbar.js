@@ -44,29 +44,27 @@ export default function InstallPwaSnackbar() {
 
 
    return (
-      <div>
-         <Box sx={{ width: '100%', position: 'absolute', bottom: '0px', opacity: '0.87' }}>
-            <Collapse in={open}>
-               <Alert
-                  action={
-                     <IconButton
-                        aria-label="close"
-                        color="inherit"
-                        size="small"
-                        onClick={() => {
-                           setOpen(false);
-                        }}
-                     >
-                        <CloseIcon fontSize="inherit" />
-                     </IconButton>
-                  }
-                  sx={{ mb: 2 }}
+
+      <Collapse in={open} sx={{ position: 'absolute', bottom: '0px' }}>
+         <Alert
+            action={
+               <IconButton
+                  aria-label="close"
+                  color="inherit"
+                  size="small"
+                  onClick={() => {
+                     setOpen(false);
+                  }}
                >
-                  Możesz dodać aplikację do swojego ekranu głównego
+                  <CloseIcon fontSize="inherit" />
+               </IconButton>
+            }
+            sx={{ mb: 2 }}
+         >
+            Możesz dodać aplikację do swojego ekranu głównego
                <Button sx={{ p: 0 }} className="add-to-home-screen">DODAJ</Button>
-               </Alert>
-            </Collapse>
-         </Box>
-      </div>
+         </Alert>
+      </Collapse>
+
    );
 }
