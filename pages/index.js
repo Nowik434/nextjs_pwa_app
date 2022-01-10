@@ -41,9 +41,14 @@ export default function Index({ initialItems }) {
         </Button>
       {/* <InstallPwaSnackbar /> */}
     </Box>) : (
-        <Typography variant="h3" component="h3" gutterBottom align="center">
-          Już wziąłeś udział w konkursie... Wybrana przez Ciebie nagroda zostanie przesłna na twój adres email
+        <>
+          <Typography variant="h3" component="h3" gutterBottom align="center">
+            Już wziąłeś udział w konkursie... Wybrana przez Ciebie nagroda zostanie przesłna na twój adres email
       </Typography>
+          <Button variant="contained" onClick={() => router.replace('https://kwalifikacje.vccsystem.eu/?page_id=198')} sx={{ mb: 4 }}>
+            Przejdź do strony VCC
+      </Button>
+        </>
       )) : <Loading />
   );
 }

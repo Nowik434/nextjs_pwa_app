@@ -8,7 +8,7 @@ export default function handler(req, res) {
 
 export const questions = [
   {
-    questionText: 'Które stwierdzenia dotyczące FundacjI VCC są prawdziwe:',
+    questionText: 'Które stwierdzenia dotyczące Fundacji VCC są prawdziwe:',
     answerOptions: [
       { answerText: 'Fundacja VCC jest obecnie podmiotem rynkowym uprawnionym do certyfikowania największej liczby kwalifikacji rynkowych włączonych do ZSK', isCorrect: false },
       { answerText: 'Fundacja VCC wydała ponad 100 000 certyfikatów', isCorrect: false },
