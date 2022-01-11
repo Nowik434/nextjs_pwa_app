@@ -6,7 +6,7 @@ const error404 = () => {
     return (
         <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
             <Typography variant="h4" component="h1" gutterBottom align="center">
-                Muisz zeskanować kod qr jeszcze raz...
+                Muisz zeskanować kod jeszcze raz...
             </Typography>
         </Box>
     );

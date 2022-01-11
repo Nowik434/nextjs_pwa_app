@@ -12,12 +12,11 @@ import Container from '@mui/material/Container';
 import InstallPwaSnackbar from '../components/snackbar';
 import '../styles/globals.css'
 
-const Airtable = require('airtable');
+// const Airtable = require('airtable');
 
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
-
 
   useEffect(() => {
     console.log("USE EFFECT ON APP COMPONENT")
@@ -38,66 +37,6 @@ export default function MyApp(props) {
     };
   }, []);
 
-  // const router = useRouter();
-  // const { storeCode } = router.asPath;
-  // console.log('ssssssssssssssssssssssssssssssssssssssssssssss', router.asPath)
-  // useEffect(() => {
-  //   console.log('ssssssssssssssssssssssssssssssssssssssssssssss', document.getElementById("manifest"))
-  //   if (router.asPath) {
-  //     console.log('ssssssssssssssssssssssssssssssssssssssssssssss', document.getElementById("manifest"))
-  //     const manifestElement = document.getElementById("manifest");
-  //     const manifestString = JSON.stringify({
-  //       ...manifest,
-  //       start_url: `/s/${router.asPath}`,
-  //     });
-  //     manifestElement?.setAttribute(
-  //       "href",
-  //       "data:application/json;charset=utf-8," + encodeURIComponent(manifestString),
-  //     );
-  //     console.log(manifestElement, manifestString)
-  //     console.log('ssssssssssssssssssssssssssssssssssssssssssssss', document.getElementById("manifest"))
-  //   }
-  // }, [router.asPath]);
-
-
-  // const router = useRouter();
-  // const { id } = router.query;
-  // console.log("ROUTER ID", router)
-  // useEffect(() => {
-  //   if (id) {
-  //     const manifestElement = document.getElementById("manifest");
-  //     const manifestString = JSON.stringify({
-  //       ...myDynamicManifest,
-  //       start_url: window.location.href,
-  //     });
-  //     console.log("manifest", manifestString)
-  //     manifestElement?.setAttribute(
-  //       "href",
-  //       "data:application/json;charset=utf-8," + encodeURIComponent(manifestString),
-  //     );
-  //     console.log('encodedddd', window.location.href)
-  //   }
-  // }, [id]);
-
-
-  //   const router = useRouter();
-  //   const { id } = router.query;
-  //   console.log("ROUTER ID", router)
-  //   useEffect(() => {
-  //     if (id) {
-  //       const manifestElement = document.getElementById("manifest");
-  //       const manifestString = JSON.stringify({
-  //         ...myDynamicManifest,
-  //         start_url: `?id=${id}`,
-  //       });
-  //       console.log("manifest", manifestString)
-  //       manifestElement?.setAttribute(
-  //         "href",
-  //         "data:application/json;charset=utf-8," + encodeURIComponent(manifestString),
-  //       );
-  //       console.log('encodedddd', window.location.href)
-  //     }
-  //   }, [id]);
 
   return (
     <>

@@ -9,8 +9,8 @@ const getMinifiedRecord = (record) => {
     return {
         id: record.getId(),
         name: record.fields.name,
-        marketing: record.fields.marketing,
-        rodo: record.fields.rodo,
+        marketing: record.fields.marketing !== undefined ? record.fields.score : null,
+        rodo: record.fields.rodo !== undefined ? record.fields.score : null,
         score: record.fields.score !== undefined ? record.fields.score : null,
         email: record.fields.email !== undefined ? record.fields.email : null,
     }

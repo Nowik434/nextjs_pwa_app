@@ -24,10 +24,10 @@ a {
   right: 0;
 }
 
-/* html,
-body,
-body > div:first-child,
-div#__next,
-div#__next > div {
-  height: 100%;
-} */
+#onesignal-bell-container.onesignal-reset .onesignal-bell-launcher.onesignal-bell-launcher-bottom-right.onesignal-bell-launcher-md {
+  position: absolute;
+  top: -152px;
+}
+#onesignal-bell-container.onesignal-reset .onesignal-bell-launcher.onesignal-bell-launcher-theme-default .onesignal-bell-launcher-button svg .background {
+  fill: #debb7c;
+}

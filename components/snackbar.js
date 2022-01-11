@@ -61,7 +61,7 @@ export default function InstallPwaSnackbar() {
             }
             sx={{ mb: 2 }}
          >
-            Możesz dodać aplikację do swojego ekranu głównego
+            Pozostań z nami! Dodaj aplikację do ekranu głównego
                <Button sx={{ p: 0 }} className="add-to-home-screen">DODAJ</Button>
          </Alert>
       </Collapse>

@@ -37,13 +37,17 @@ export default function Introduction() {
     };
 
     useEffect(() => {
-        setItem({
-            id: items.id,
-            fields: {
-                rodo: rodoIsChecked,
-                marketing: marketingIsChecked
-            }
-        })
+        if (items === undefined) {
+            router.push('/404')
+        } else {
+            setItem({
+                id: items.id,
+                fields: {
+                    rodo: rodoIsChecked,
+                    marketing: marketingIsChecked
+                }
+            })
+        }
         // items ?
         // setItem({
         //     id: items.id,
@@ -60,7 +64,7 @@ export default function Introduction() {
     return (
         <Container maxWidth="sm" sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
             <Typography variant="h4" component="h1" gutterBottom align="center">
-                Aby kontynuować musisz zaznaczyć poniższe zgody.
+                Aby kontynuować zaznacz poniższe zgody.
         </Typography>
 
             <List sx={{ width: '100%', maxWidth: 1360, bgcolor: 'background.paper' }}>

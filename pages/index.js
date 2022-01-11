@@ -29,7 +29,7 @@ export default function Index({ initialItems }) {
         Witaj {items ? items.name : null}
       </Typography>
       <Typography variant="h4" component="h1" gutterBottom align="center">
-        właśnie zeskanowałeś swój kod i możesz wziąć udział w quizie z gwarantowaną nagrodą.
+        właśnie zeskanowałeś/aś swój kod i możesz wziąć udział w quizie z gwarantowaną nagrodą.
         </Typography>
       <Button variant="contained" onClick={() => router.push('/introduction')} sx={{ mb: 4 }}>
         Przejdź dalej
