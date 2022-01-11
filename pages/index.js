@@ -6,17 +6,13 @@ import Button from '@mui/material/Button';
 import { useRouter } from 'next/router';
 import { table, minifyRecords } from "./api/getUserData";
 import { ItemsContext } from './api/context';
-// import InstallPwaSnackbar from '../components/snackbar';
 import Loading from '../components/loading/loading';
 import Image from 'next/image';
 
 export default function Index({ initialItems }) {
   const router = useRouter();
-  console.log("INITIAL ITEMS", initialItems);
   const [loading, setLoading] = useState(false);
   const { items, setItems } = useContext(ItemsContext);
-  // console.log(ItemsContext)
-  // console.log("MAIN INDEX")
 
   useEffect(() => {
     setItems(initialItems);
@@ -24,7 +20,6 @@ export default function Index({ initialItems }) {
       setLoading(true)
     }, 1500)
 
-    // localStorage.setItem('id', initialItems.id);
   }, [initialItems, setItems, setLoading]);
 
   return (
@@ -58,8 +53,7 @@ export const getServerSideProps = async (context) => {
   const items = await table.select({}).firstPage();
   const minified1 = minifyRecords(items, id)
   const minified2 = { ...minified1 }
-  // const data = await minified.json()
-  // console.log('fffffffffff', JSON.parse(JSON.stringify(minified2[0])))
+
   return {
     props: {
       initialItems: minified2[0] ?? {
