@@ -23,7 +23,7 @@ export default function Introduction() {
 
     const [rodoReadMore, setRodoReadMore] = useState(false);
     const [marketingReadMore, setMarketingReadMore] = useState(false);
-    console.log(items)
+    // console.log(items)
 
     const [item, setItem] = useState();
 
