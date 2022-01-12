@@ -53,7 +53,7 @@ export const getServerSideProps = async (context) => {
   const items = await table.select({}).firstPage();
   const minified1 = minifyRecords(items, id)
   const minified2 = { ...minified1 }
-
+console.log(minified1, minified2)
   return {
     props: {
       initialItems: minified2[0] ?? {
