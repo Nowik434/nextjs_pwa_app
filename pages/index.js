@@ -10,10 +10,10 @@ import Loading from '../components/loading/loading';
 import Image from 'next/image';
 
 export default function Index({ initialItems }) {
+  console.log(initialItems)
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const { items, setItems } = useContext(ItemsContext);
-  console.log(minified1, minified2)
   
   useEffect(() => {
     setItems(initialItems);
