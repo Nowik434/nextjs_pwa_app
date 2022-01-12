@@ -13,7 +13,8 @@ export default function Index({ initialItems }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const { items, setItems } = useContext(ItemsContext);
-
+  console.log(minified1, minified2)
+  
   useEffect(() => {
     setItems(initialItems);
     setTimeout(() => {
