@@ -19,12 +19,11 @@ export default function MyApp(props) {
   const { Component, pageProps } = props;
 
   useEffect(() => {
-    console.log("USE EFFECT ON APP COMPONENT")
     window.OneSignal = window.OneSignal || [];
     OneSignal.push(function () {
       OneSignal.init({
-        appId: "bf391442-24ef-44ab-9074-e22d69d8f2b6",
-        safari_web_id: "web.onesignal.auto.271ef36b-44de-4fef-87dc-9a2f81b1418e",
+        appId: process.env.ONESIGNAL_APP_ID,
+        safari_web_id: process.env.ONESIGNAL_SAFARI_WEB_ID,
         notifyButton: {
           enable: true,
         },
@@ -48,10 +47,6 @@ export default function MyApp(props) {
         <CssBaseline />
         <ItemsProvider style={{ height: '100%' }}>
           <Container maxWidth="sm" sx={{
-            // position: 'absolute',
-            // top: '50%',
-            // left: '50%',
-            // transform: 'translate(-50%, -50%)',
             display: 'grid',
             'align-items': 'center',
             height: '100%',

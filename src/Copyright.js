@@ -11,7 +11,7 @@ export default function Copyright() {
       transform: 'translate(-50%, -50%)'
     }}>
       <MuiLink color="inherit" href="/">
-        P.N.
+        Paweł Nowicki
       </MuiLink>{' '}
       {new Date().getFullYear()}.
     </Typography>

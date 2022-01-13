@@ -23,7 +23,6 @@ export default function Introduction() {
 
     const [rodoReadMore, setRodoReadMore] = useState(false);
     const [marketingReadMore, setMarketingReadMore] = useState(false);
-    // console.log(items)
 
     const [item, setItem] = useState();
 
@@ -79,12 +78,10 @@ export default function Introduction() {
                             />
                         </ListItemIcon>
                         <ListItemText>
-                            Wyrażam zgodę  na przetwarzanie moich danych osobowych, w celu wysyłania informacji handlowych drogą elektroniczną przez {!rodoReadMore ? <Button sx={{ padding: '0px' }} onClick={() => setRodoReadMore(!rodoReadMore)}>Rozwiń...</Button> : null}{rodoReadMore ? 'Fundację VCC zgodnie z europejskim rozporządzeniem o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (Dz. Urz. UE L nr 119, str. 1) oraz ustawą z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną (Dz.U. 2002 nr 144 poz. 1204z zm.)' : null}
-
+                            Na podstawie art. 6 ust. 1 lit. a, art. 9 ust. 2 lit. a rozporządzenia Parlamentu Europejskiego i {!rodoReadMore ? <Button sx={{ padding: '0px' }} onClick={() => setRodoReadMore(!rodoReadMore)}>Rozwiń...</Button> : null}{rodoReadMore ? 'Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) Dz. Urz. UE L 119/1, z 4.5.2016, zwanego dalej „RODO” wyrażam zgodę na przetwarzanie następujących kategorii moich danych osobowych (adres mailowy), w celu organizacji quizu.' : null}
                         </ListItemText>
                     </ListItemButton>
                 </ListItem>
-
                 <ListItem>
                     <ListItemButton role={undefined} onClick={() => setMarketingIsChecked(!marketingIsChecked)} dense>
                         <ListItemIcon>
@@ -96,9 +93,7 @@ export default function Introduction() {
                             />
                         </ListItemIcon>
                         <ListItemText>
-
-                            Wyrażam zgodę  na przetwarzanie moich danych osobowych, w celu prowadzenia marketingu bezpośredniego za pośrednictwem połączeń telefonicznych przez {!marketingReadMore ? <Button sx={{ padding: '0px' }} onClick={() => setMarketingReadMore(!marketingReadMore)}>Rozwiń...</Button> : null}{marketingReadMore ? 'Fundację VCC zgodnie z europejskim rozporządzeniem o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (Dz. Urz. UE L nr 119, str. 1) oraz ustawą z dnia 16 lipca 2004 r. Prawo telekomunikacyjne (Dz.U. 2004 nr 171 poz. 1800 z zm.).' : null}
-
+                            Wyrażam zgodę na kontakt ze strony Fundacji VCC w celach marketingowych na adres mailowy podany w tym formularzu. {!marketingReadMore ? <Button sx={{ padding: '0px' }} onClick={() => setMarketingReadMore(!marketingReadMore)}>Rozwiń...</Button> : null}{marketingReadMore ? 'Zostałem(-am) poinformowany(-a), że przysługuje mi prawo dostępu do swoich danych, możliwości ich poprawiania, żądania zaprzestania ich przetwarzania.' : null}
                         </ListItemText>
                     </ListItemButton>
                 </ListItem>
