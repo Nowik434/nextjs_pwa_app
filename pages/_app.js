@@ -10,9 +10,7 @@ import { useRouter } from 'next/router';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import InstallPwaSnackbar from '../components/snackbar';
-import '../styles/globals.css'
-
-// const Airtable = require('airtable');
+import '../styles/globals.css';
 
 
 export default function MyApp(props) {
