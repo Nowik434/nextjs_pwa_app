@@ -12,8 +12,6 @@ import Container from '@mui/material/Container';
 import InstallPwaSnackbar from '../components/snackbar';
 import '../styles/globals.css'
 
-// const Airtable = require('airtable');
-
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
