@@ -26,7 +26,6 @@ export default function Introduction() {
 
     const [item, setItem] = useState();
 
-
     const handleClick = (e) => {
         e.preventDefault();
         setIsConfirmed(true)
