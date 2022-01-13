@@ -78,7 +78,7 @@ export default function Introduction() {
                             />
                         </ListItemIcon>
                         <ListItemText>
-                            Na podstawie art. 6 ust. 1 lit. a, art. 9 ust. 2 lit. a rozporządzenia Parlamentu Europejskiego i {!rodoReadMore ? <Button sx={{ padding: '0px' }} onClick={() => setRodoReadMore(!rodoReadMore)}>Rozwiń...</Button> : null}{rodoReadMore ? 'Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) Dz. Urz. UE L 119/1, z 4.5.2016, zwanego dalej „RODO” wyrażam zgodę na przetwarzanie następujących kategorii moich danych osobowych (adres mailowy), w celu organizacji quizu.' : null}
+                            Na podstawie art. 6 ust. 1 lit. a, art. 9 ust. 2 lit. a rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie {!rodoReadMore ? <Button sx={{ padding: '0px' }} onClick={() => setRodoReadMore(!rodoReadMore)}>Rozwiń...</Button> : null}{rodoReadMore ? ' ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) Dz. Urz. UE L 119/1, z 4.5.2016, zwanego dalej „RODO” wyrażam zgodę na przetwarzanie następujących kategorii moich danych osobowych (adres mailowy), w celu organizacji quizu.' : null}
                         </ListItemText>
                     </ListItemButton>
                 </ListItem>
