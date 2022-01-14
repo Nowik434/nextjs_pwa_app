@@ -67,18 +67,18 @@ export default function QuizComponent() {
                 {showScore ? (
                     <>
                         {score == 6 ?
-                            <Typography variant="h4" component="h1" gutterBottom align="center">
+                            <Typography variant="h5" component="h1" gutterBottom align="center">
                                 Gratulacje! Udzieliłeś/aś prawidłowo odpowiedzi na wszystkie pytania! Możesz teraz wybrać nagrodę!
                                 </Typography> : null
                         }
                         {score > 2 && score < 6 ?
-                            <Typography variant="h4" component="h1" gutterBottom align="center">
+                            <Typography variant="h5" component="h1" gutterBottom align="center">
                                 Gratulacje! Odpowiedziałeś/aś prawidłowo na większość pytań! Możesz teraz wybrać nagrodę!
                                 </Typography> : null
                         }
                         {score <= 2 ? (
                             <>
-                                <Typography variant="h4" component="h1" gutterBottom align="center">
+                                <Typography variant="h5" component="h1" gutterBottom align="center">
                                     Niestety odpowiedziałeś/aś błędnie na większość pytań! {!secondTry ? 'Możesz spróbować jeszcze raz!' : 'Nie możesz przystąpić kolejny raz.'}
                                 </Typography>
                             </>
