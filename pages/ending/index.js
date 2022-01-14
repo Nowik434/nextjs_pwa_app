@@ -50,7 +50,7 @@ const Ending = () => {
                     variant="outlined"
                     helperText={emailError}
                     onChange={(e) => validateEmail(e)} />
-                {emailError == 'Podałeś poprawny aders email' ? (<Button variant="contained" onClick={(e) => handleClick(e)} noLinkStyle sx={{ mt: 2 }}>
+                {emailError == 'Podałeś poprawny adres email' ? (<Button variant="contained" onClick={(e) => handleClick(e)} noLinkStyle sx={{ mt: 2 }}>
                     Zatwierdź
             </Button>) : (<Button variant="contained" disabled noLinkStyle sx={{ mt: 2 }}>
                         Musisz podać prawidłowy adres email
@@ -59,10 +59,10 @@ const Ending = () => {
         </Box>) : (
                 <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
                     <Image src="/static/vcclogo.png" alt="gift" width={150} height={150} />
-                    <Typography variant="h4" component="h1" gutterBottom align="center">
+                    <Typography variant="h5" component="h1" gutterBottom align="center">
                         Nagroda zostanie dostarczona na wskazany adres mailowy bądź adres Twojego zakładu pracy!
         </Typography>
-                    <Image src="/static/gift.png" alt="gift" width={400} height={400} />
+                    <Image src="/static/gift.png" alt="gift" width={300} height={300} />
                 </Box>
             )
     );
