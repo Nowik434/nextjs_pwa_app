@@ -1,8 +1,7 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-export default function handler(req, res) {
-  res.status(200).json({ name: 'John Doe' })
-}
+// export default function handler(req, res) {
+//   res.status(200).json({ name: 'John Doe' })
+// }
 
 
 
@@ -53,12 +52,12 @@ export const questions = [
     ],
   },
   {
-    questionText: 'Ile poziomów zawiera Polska Rama Kwalifikacji?',
+    questionText: 'Czy zgadzasz się ze stwierdzeniem, ze krótkie formy kształcenia mogą wzbogacić edukację formalną?',
     answerOptions: [
-      { answerText: '7', isCorrect: false },
-      { answerText: '8', isCorrect: true },
-      { answerText: '9', isCorrect: false },
-      { answerText: '10', isCorrect: false },
+      { answerText: 'Zdecydowanie tak', isCorrect: true },
+      { answerText: 'Raczej tak', isCorrect: true },
+      { answerText: 'Nie zgadzam się', isCorrect: true },
+      { answerText: 'Nie wiem', isCorrect: true },
     ],
   },
 ];

@@ -5,12 +5,12 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Copyright from '../../src/Copyright';
-import Loading from '../../components/loading/loading';
+// import Loading from '../../components/loading/loading';
 import QuizComponent from '../../components/quizComponent/quizComponent';
-
+import Image from 'next/image';
 
 export default function Quiz() {
-    const router = useRouter()
+    // const router = useRouter()
     const [isRunning, setIsRunning] = useState(false)
 
 
@@ -20,11 +20,12 @@ export default function Quiz() {
         ) : (
                 <>
                     <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
-                        <Typography variant="h4" component="h1" gutterBottom align="center">
-                            Rozwiąż Quiz aby uzyskać nagrodę
+                        <Image src="/static/vcclogo.png" alt="gift" width={200} height={200} />
+                        <Typography variant="h5" component="h1" gutterBottom align="center">
+                            Rozwiąż Quiz aby uzyskać nagrodę.
                         </Typography>
                         <Typography variant="h7" component="h3" gutterBottom align="center">
-                            odpowiedz na 6 pytań i odbierz gwarantowaną nagrodę!
+                            Odpowiedz na 6 pytań i odbierz gwarantowaną nagrodę!
                         </Typography>
                         <Button variant="contained" sx={{ p: 1, m: 3 }} onClick={() => setIsRunning(true)} noLinkStyle>
                             Rozpocznij...

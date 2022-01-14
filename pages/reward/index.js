@@ -102,27 +102,17 @@ import ksiazka from '../../public/static/ksiazka.jpg';
 import empik from '../../public/static/empik.png';
 import ladowarka from '../../public/static/ladowarka.png';
 
-// console.log('KSIAZKA', ksiazka)
-
-
 
 
 function PricingContent() {
     const router = useRouter()
     const [reward, setReward] = useState();
     const { items, updateItem } = useContext(ItemsContext);
+    document.querySelector(".MuiCollapse-root").style.display = "block"
 
     const [tiers, setTiers] = useState([
         {
             id: 0,
-            title: 'Książka',
-            img: ksiazka.src,
-            buttonText: 'Wybierz',
-            buttonVariant: 'outlined',
-            chosen: false,
-        },
-        {
-            id: 1,
             title: 'Kupon Empik',
             img: empik.src,
             buttonText: 'Wybierz',
@@ -130,7 +120,7 @@ function PricingContent() {
             chosen: false,
         },
         {
-            id: 2,
+            id: 1,
             title: 'Ładowarka indukcyjna',
             img: ladowarka.src,
             buttonText: 'Wybierz',
@@ -153,7 +143,7 @@ function PricingContent() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('reward', reward)
+        // console.log('reward', reward)
         updateItem({
             id: items.id,
             fields: {
@@ -173,8 +163,8 @@ function PricingContent() {
                                 item
                                 key={tier.title}
                                 xs={12}
-                                sm={tier.title === 'Enterprise' ? 12 : 6}
-                                md={4}
+                                sm={12}
+                                md={6}
                             >
                                 <Card>
                                     <CardHeader
@@ -185,9 +175,9 @@ function PricingContent() {
                                         }}
                                         sx={{
                                             backgroundColor: (theme) =>
-                                                theme.palette.mode === 'light'
+                                                tier.buttonVariant === 'outlined'
                                                     ? theme.palette.grey[200]
-                                                    : theme.palette.grey[700],
+                                                    : '#d2ab67',
                                             minHeight: '93px',
                                         }}
                                     />
@@ -196,7 +186,12 @@ function PricingContent() {
                                         height="140"
                                         image={tier.img}
                                         alt="green iguana"
-                                    />
+                                        sx={{
+                                            height: '140',
+                                            width: 'auto',
+                                            margin: '41px',
+                                            display: 'initial',
+                                        }} />
                                     <CardActions>
                                         <Button onClick={(e) => handleClick(e, tier, i)} fullWidth variant={tier.buttonVariant} name={tier.title}>
                                             {tier.buttonText}

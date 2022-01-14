@@ -20,11 +20,6 @@ export default function MyApp(props) {
     window.OneSignal = window.OneSignal || [];
     OneSignal.push(function () {
       OneSignal.init({
-        // appId: "bf391442-24ef-44ab-9074-e22d69d8f2b6",
-        // safari_web_id: "web.onesignal.auto.271ef36b-44de-4fef-87dc-9a2f81b1418e",
-        // notifyButton: {
-        //   enable: true,
-        // },
         appId: process.env.ONESIGNAL_APP_ID,
         safari_web_id: process.env.ONESIGNAL_SAFARI_WEB_ID,
         notifyButton: {
@@ -33,7 +28,7 @@ export default function MyApp(props) {
         allowLocalhostAsSecureOrigin: true,
       });
     });
-
+    document.querySelector(".MuiCollapse-root").style.display = "none"
     return () => {
       window.OneSignal = undefined;
     };
@@ -50,10 +45,6 @@ export default function MyApp(props) {
         <CssBaseline />
         <ItemsProvider style={{ height: '100%' }}>
           <Container maxWidth="sm" sx={{
-            // position: 'absolute',
-            // top: '50%',
-            // left: '50%',
-            // transform: 'translate(-50%, -50%)',
             display: 'grid',
             'align-items': 'center',
             height: '100%',

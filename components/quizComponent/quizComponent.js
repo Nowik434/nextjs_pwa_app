@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { ItemsContext } from '../../pages/api/context';
+import Image from 'next/image';
 
 export default function QuizComponent() {
     const router = useRouter()
@@ -56,6 +57,7 @@ export default function QuizComponent() {
             textAlign: 'center'
         }}>
             <Box sx={{ my: 4 }}>
+                <Image src="/static/vcclogo.png" alt="gift" width={150} height={150} />
                 {showScore ? (
                     <>
                         {score == 6 ?

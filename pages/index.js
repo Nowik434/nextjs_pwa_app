@@ -14,7 +14,7 @@ export default function Index({ initialItems }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const { items, setItems } = useContext(ItemsContext);
-  
+
   useEffect(() => {
     setItems(initialItems);
     setTimeout(() => {
@@ -22,24 +22,26 @@ export default function Index({ initialItems }) {
     }, 1500)
 
   }, [initialItems, setItems, setLoading]);
+  loading ? (
+    items.id == 111111 ? router.push('/404') : null
+  ) : null
 
   return (
     loading ? (items && items.score == null ? (<Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
       <Image src="/static/vcclogo.png" alt="gift" width={200} height={200} />
       <Typography variant="h4" component="h1" gutterBottom align="center">
-        Witaj {items ? items.name : null}
+        Witaj {items ? items.name : null}!
       </Typography>
       <Typography variant="h4" component="h1" gutterBottom align="center">
-        właśnie zeskanowałeś/aś swój kod i możesz wziąć udział w quizie z gwarantowaną nagrodą.
+        Właśnie zeskanowałeś/aś swój kod i możesz wziąć udział w quizie z gwarantowaną nagrodą.
         </Typography>
       <Button variant="contained" onClick={() => router.push('/introduction')} sx={{ mb: 4 }}>
         Przejdź dalej
         </Button>
-      {/* <InstallPwaSnackbar /> */}
     </Box>) : (
         <>
           <Typography variant="h3" component="h3" gutterBottom align="center">
-            Już wziąłeś udział w konkursie... Wybrana przez Ciebie nagroda zostanie przesłna na twój adres email
+            Już wziąłeś udział w konkursie... Skontaktujemy się z Tobą w celu dostarczenia wybranej przez Ciebie nagrody
       </Typography>
           <Button variant="contained" onClick={() => router.replace('https://kwalifikacje.vccsystem.eu/?page_id=198')} sx={{ mb: 4 }}>
             Przejdź do strony VCC
@@ -58,7 +60,7 @@ export const getServerSideProps = async (context) => {
   return {
     props: {
       initialItems: minified2[0] ?? {
-        id: 543564,
+        id: 111111,
         fields: {
           name: 'Anna Test',
           rodo: true,

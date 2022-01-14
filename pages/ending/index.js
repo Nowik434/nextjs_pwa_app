@@ -39,13 +39,14 @@ const Ending = () => {
 
     return (
         !isSubmited ? (<Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
+            <Image src="/static/vcclogo.png" alt="gift" width={150} height={150} />
             <Typography variant="h4" component="h1" gutterBottom align="center">
                 Dziękujemy za udział...
             </Typography>
             <FormControl sx={{ width: '37ch', mt: 2 }}>
                 <TextField
                     id="outlined-basic"
-                    label="Wpisz adres email do wysłania nagrody"
+                    label="Wpisz adres email"
                     variant="outlined"
                     helperText={emailError}
                     onChange={(e) => validateEmail(e)} />
@@ -56,12 +57,13 @@ const Ending = () => {
             </Button>)}
             </FormControl>
         </Box>) : (
-                <>
+                <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
+                    <Image src="/static/vcclogo.png" alt="gift" width={150} height={150} />
                     <Typography variant="h4" component="h1" gutterBottom align="center">
-                        Nagroda zostanie przesłana na podany przez Ciebie email w najbliższym czasie
+                        Skontaktujemy się z Tobą w celu dostarczenia wybranej przez Ciebie nagrody
         </Typography>
-                    <Image src="/static/gift.png" alt="gift" width={500} height={500} />
-                </>
+                    <Image src="/static/gift.png" alt="gift" width={400} height={400} />
+                </Box>
             )
     );
 }

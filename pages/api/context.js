@@ -4,19 +4,6 @@ const ItemsContext = createContext();
 
 const ItemsProvider = ({ children }) => {
     const [items, setItems] = useState();
-    const addItem = async (item) => {
-        try {
-            const res = await fetch("/api/updateUserData", {
-                method: "POST",
-                body: JSON.stringify({ item }),
-                headers: { "Content-Type": "application/json" },
-            });
-            await res.json();
-
-        } catch (error) {
-            console.error(error);
-        }
-    };
 
     const updateItem = async (updatedItem) => {
         try {
@@ -36,8 +23,7 @@ const ItemsProvider = ({ children }) => {
             value={{
                 items,
                 setItems,
-                addItem,
-                updateItem
+                updateItem,
             }}
         >
             {children}

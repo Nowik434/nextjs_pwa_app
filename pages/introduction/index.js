@@ -12,7 +12,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
 import Loading from '../../components/loading/loading';
 import { ItemsContext } from '../api/context';
-
+import Image from 'next/image';
 
 export default function Introduction() {
     const router = useRouter()
@@ -61,6 +61,7 @@ export default function Introduction() {
 
     return (
         <Container maxWidth="sm" sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
+            <Image src="/static/vcclogo.png" alt="gift" width={150} height={150} />
             <Typography variant="h4" component="h1" gutterBottom align="center">
                 Aby kontynuować zaznacz poniższe zgody.
         </Typography>
