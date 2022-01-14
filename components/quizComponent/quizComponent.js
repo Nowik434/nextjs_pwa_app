@@ -93,10 +93,10 @@ export default function QuizComponent() {
                     </>
                 ) : (
                         <>
-                            <Typography variant="h6" component="h2" gutterBottom align="center">
+                            <Typography variant="h7" component="h2" gutterBottom align="center">
                                 <span>Pytanie {currentQuestion + 1}</span>/{questions.length}
                             </Typography>
-                            <Typography variant="h5" component="h1" gutterBottom align="center">{questions[currentQuestion].questionText}</Typography>
+                            <Typography variant="h6" component="h1" gutterBottom align="center">{questions[currentQuestion].questionText}</Typography>
                             <Box sx={{
                                 mx: "auto",
                                 display: 'flex',

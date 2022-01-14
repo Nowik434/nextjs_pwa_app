@@ -41,7 +41,7 @@ const Ending = () => {
         !isSubmited ? (<Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
             <Image src="/static/vcclogo.png" alt="gift" width={150} height={150} />
             <Typography variant="h4" component="h1" gutterBottom align="center">
-                Dziękujemy za udział...
+                Dziękujemy za udział!
             </Typography>
             <FormControl sx={{ width: '37ch', mt: 2 }}>
                 <TextField
@@ -60,7 +60,7 @@ const Ending = () => {
                 <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
                     <Image src="/static/vcclogo.png" alt="gift" width={150} height={150} />
                     <Typography variant="h4" component="h1" gutterBottom align="center">
-                        Skontaktujemy się z Tobą w celu dostarczenia wybranej przez Ciebie nagrody
+                        Nagroda zostanie dostarczona na wskazany adres mailowy bądź adres Twojego zakładu pracy!
         </Typography>
                     <Image src="/static/gift.png" alt="gift" width={400} height={400} />
                 </Box>

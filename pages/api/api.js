@@ -52,7 +52,7 @@ export const questions = [
     ],
   },
   {
-    questionText: 'Czy zgadzasz się ze stwierdzeniem, ze krótkie formy kształcenia mogą wzbogacić edukację formalną?',
+    questionText: 'Czy zgadzasz się ze stwierdzeniem, że krótkie formy kształcenia mogą wzbogacić edukację formalną?',
     answerOptions: [
       { answerText: 'Zdecydowanie tak', isCorrect: true },
       { answerText: 'Raczej tak', isCorrect: true },

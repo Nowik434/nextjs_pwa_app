@@ -41,7 +41,7 @@ export default function Index({ initialItems }) {
     </Box>) : (
         <>
           <Typography variant="h5" component="h3" gutterBottom align="center">
-            Już wziąłeś udział w konkursie... Skontaktujemy się z Tobą w celu dostarczenia wybranej przez Ciebie nagrody
+            Już wziąłeś udział w konkursie... Nagroda zostanie dostarczona na wskazany adres mailowy bądź adres Twojego zakładu pracy!
       </Typography>
           <Button variant="contained" onClick={() => router.replace('https://kwalifikacje.vccsystem.eu/?page_id=198')} sx={{ mb: 4 }}>
             Przejdź do strony VCC
