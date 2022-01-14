@@ -40,7 +40,7 @@ export default function Index({ initialItems }) {
         </Button>
     </Box>) : (
         <>
-          <Typography variant="h3" component="h3" gutterBottom align="center">
+          <Typography variant="h5" component="h3" gutterBottom align="center">
             Już wziąłeś udział w konkursie... Skontaktujemy się z Tobą w celu dostarczenia wybranej przez Ciebie nagrody
       </Typography>
           <Button variant="contained" onClick={() => router.replace('https://kwalifikacje.vccsystem.eu/?page_id=198')} sx={{ mb: 4 }}>
