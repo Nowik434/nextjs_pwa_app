@@ -20,7 +20,7 @@ const Ending = () => {
         var email = e.target.value
         setEmail(email)
         if (validator.isEmail(email)) {
-            setEmailError('Podałeś poprawny aders email')
+            setEmailError('Podałeś poprawny adres email')
         } else {
             setEmailError('Błędny adres email!')
         }

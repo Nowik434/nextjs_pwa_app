@@ -113,7 +113,7 @@ function PricingContent() {
     const [tiers, setTiers] = useState([
         {
             id: 0,
-            title: 'Kupon Empik (50 zł)',
+            title: 'Kupon do Empiku (50 zł)',
             img: empik.src,
             buttonText: 'Wybierz',
             buttonVariant: 'outlined',

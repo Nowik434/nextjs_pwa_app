@@ -29,10 +29,10 @@ export default function Index({ initialItems }) {
   return (
     loading ? (items && items.score == null ? (<Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
       <Image src="/static/vcclogo.png" alt="gift" width={200} height={200} />
-      <Typography variant="h4" component="h1" gutterBottom align="center">
+      <Typography variant="h5" component="h1" gutterBottom align="center">
         Witaj {items ? items.name : null}!
       </Typography>
-      <Typography variant="h4" component="h1" gutterBottom align="center">
+      <Typography variant="h5" component="h1" gutterBottom align="center">
         Właśnie zeskanowałeś/aś swój kod i możesz wziąć udział w quizie z gwarantowaną nagrodą.
         </Typography>
       <Button variant="contained" onClick={() => router.push('/introduction')} sx={{ mb: 4 }}>
