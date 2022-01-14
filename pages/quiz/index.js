@@ -21,10 +21,10 @@ export default function Quiz() {
                 <>
                     <Box sx={{ mx: "auto", my: 4, textAlign: 'center' }}>
                         <Image src="/static/vcclogo.png" alt="gift" width={200} height={200} />
-                        <Typography variant="h5" component="h1" gutterBottom align="center">
+                        {/* <Typography variant="h5" component="h1" gutterBottom align="center">
                             Rozwiąż Quiz aby uzyskać nagrodę.
-                        </Typography>
-                        <Typography variant="h7" component="h3" gutterBottom align="center">
+                        </Typography> */}
+                        <Typography variant="h5" component="h1" gutterBottom align="center">
                             Odpowiedz na 6 pytań i odbierz gwarantowaną nagrodę!
                         </Typography>
                         <Button variant="contained" sx={{ p: 1, m: 3 }} onClick={() => setIsRunning(true)} noLinkStyle>

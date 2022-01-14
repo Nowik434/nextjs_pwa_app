@@ -43,6 +43,12 @@ export default function QuizComponent() {
         router.push('/reward')
     }
 
+    const failureAttempt = (e) => {
+        e.preventDefault();
+        updateItem(item);
+        router.push('/')
+    }
+
     const resetTest = (e) => {
         e.preventDefault();
         setCurrentQuestion(0);
@@ -83,7 +89,7 @@ export default function QuizComponent() {
                             : null
                         }
                         {score <= 2 && secondTry ?
-                            <Button variant="contained" size="large" onClick={(e) => router.push('/')}>zakończ test</Button>
+                            <Button variant="contained" size="large" onClick={(e) => failureAttempt(e)}>zakończ test</Button>
                             : null
                         }
                         {score > 2 ?
@@ -93,7 +99,7 @@ export default function QuizComponent() {
                     </>
                 ) : (
                         <>
-                            <Typography variant="h7" component="h2" gutterBottom align="center">
+                            <Typography variant="h6" component="h2" gutterBottom align="center">
                                 <span>Pytanie {currentQuestion + 1}</span>/{questions.length}
                             </Typography>
                             <Typography variant="h6" component="h1" gutterBottom align="center">{questions[currentQuestion].questionText}</Typography>
