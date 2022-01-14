@@ -108,7 +108,7 @@ function PricingContent() {
     const router = useRouter()
     const [reward, setReward] = useState();
     const { items, updateItem } = useContext(ItemsContext);
-    document.querySelector(".MuiCollapse-root").style.display = "block"
+    // document.querySelector(".MuiCollapse-root").style.display = "block"
 
     const [tiers, setTiers] = useState([
         {

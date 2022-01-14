@@ -28,7 +28,7 @@ export default function MyApp(props) {
         allowLocalhostAsSecureOrigin: true,
       });
     });
-    document.querySelector(".MuiCollapse-root").style.display = "none"
+    // document.querySelector(".MuiCollapse-root").style.display = "none"
     return () => {
       window.OneSignal = undefined;
     };
